@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#wbn-slider {
+  position: relative;
+  height: 50vw;
+  overflow: hidden;
+}
+
+.wbn-slide {
+  position: absolute;
+  width: 100%;
+  z-index: 500;
+  height: 50vw;
+}
+
+.wbn-slide img {
+  object-fit: cover;
+  width: 100%;
+  pointer-events: none;
+}
+
+.active {
+  z-index: 1000;
+}
+
+.slideInLeft {
+  animation-name: animateInLeft;
+  z-index: 1000;
+}
+
+.slideInRight {
+  animation-name: animateInRight;
+  z-index: 1000;
+}
+
+.slideOutLeft {
+  transform: translateX(-100%);
+}
+
+.slideOutRight {
+  transform: translateX(100%);
+}
+
+@keyframes animateInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes animateInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.wbn-buttons {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 20000;
+}
+
+.wbn-slider-back-btn,
+.wbn-slider-next-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  font-size: 20px;
+  opacity: 0.7;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  transition: all 0.2s;
+  margin: 20px;
+}
+
+.wbn-slider-back-btn:hover,
+.wbn-slider-next-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.wbn-overlay-text {
+  position: absolute;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  opacity: 1;
+}
+
+.wbn-overlay-text .wbn-header {
+  font-family: 'Chivo', sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+}
+
+.wbn-overlay-text .wbn-text {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 22px;
+  line-height: 30px;
+  color: white;
+  max-width: 30%;
+}
